@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Banner from "./components/Banner";
+import Cast from "./components/Cast";
+import Navbar from "./components/Navbar";
 
 function App() {
+  const [castInfo, setCastInfo] = useState([]);
+  const [seriesInfo, setSeriesInfo] = useState([]);
+
+  useEffect(() => {
+    const getInfo = async () => {
+      const result = await fetch("https://demo.tech2edge.co/samples/data-sg");
+      const actualData = await result.json();
+      setCastInfo(actualData.characters);
+      setSeriesInfo(actualData.series);
+    };
+    getInfo();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Banner seriesData={seriesInfo} />
+      <Cast castData={castInfo} />
     </div>
   );
 }

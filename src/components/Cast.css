@@ -1,0 +1,107 @@
+.cast_page{
+    margin-left: 30px;
+    padding-top: 10px;
+    color: white;
+}
+
+.cast {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    /* margin-left: 30px; */
+    padding-bottom: 30px;
+    color: white;
+    overflow-x: scroll;
+}
+
+.cast::-webkit-scrollbar {
+    display: none;
+}
+
+.cast_info {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+
+.cast_name{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.cast_profession{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.cast_age{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.cast_image {
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Media Queries */
+
+@media (min-width:320px) and (max-width:425px){
+    .cast_name{
+        font-size: 1rem;
+    }
+    .cast_profession{
+        font-size: 0.8rem;
+    }
+    .cast_age{
+        font-size: 1rem;
+    }
+    .cast_image {
+        height: 80px;
+    }
+}
+@media (min-width:426px) and (max-width:650px){
+    .cast_name{
+        font-size: 1rem;
+    }
+    .cast_profession{
+        font-size: 1rem;
+    }
+    .cast_age{
+        font-size: 1.2rem;
+    }
+    .cast_image {
+        height: 90px;
+    }
+}
+
+@media (min-width:651px) and (max-width:762px){
+    .cast_name{
+        font-size: 1rem;
+    }
+    .cast_profession{
+        font-size: 1rem;
+    }
+    .cast_age{
+        font-size: 1.2rem;
+    }
+    .cast_image {
+        height: 100px;
+    }
+}
+
+@media (min-width:763px) and (max-width:1024px) {
+    .cast_name{
+        font-size: 1.2rem;
+    }
+    .cast_profession{
+        font-size: 1.2rem;
+    }
+    .cast_age{
+        font-size: 1.2rem;
+    }
+    .cast_image {
+        height: 110px;
+    }
+}
